@@ -1,0 +1,201 @@
+{
+  "ports": [
+    {
+      "id": "1",
+      "code": "RG",
+      "name": "Rạch Giá",
+      "province": "Kiên Giang"
+    },
+    {
+      "id": "2",
+      "code": "PQ",
+      "name": "Phú Quốc",
+      "province": "Kiên Giang"
+    },
+    {
+      "id": "3",
+      "code": "HT",
+      "name": "Hà Tiên",
+      "province": "Kiên Giang"
+    },
+    {
+      "id": "4",
+      "code": "CD",
+      "name": "Côn Đảo",
+      "province": "Bà Rịa - Vũng Tàu"
+    },
+    {
+      "id": "5",
+      "code": "ST",
+      "name": "Sóc Trăng",
+      "province": "Sóc Trăng"
+    }
+  ],
+  "routes": [
+    {
+      "id": "101",
+      "fromPort": "RG",
+      "toPort": "PQ",
+      "durationMinutes": 150
+    },
+    {
+      "id": "102",
+      "fromPort": "HT",
+      "toPort": "PQ",
+      "durationMinutes": 90
+    },
+    {
+      "id": "103",
+      "fromPort": "ST",
+      "toPort": "CD",
+      "durationMinutes": 165
+    }
+  ],
+  "sailings": [
+    {
+      "id": "1001",
+      "routeId": 101,
+      "date": "2026-03-21",
+      "departTime": "07:30",
+      "arriveTime": "10:00",
+      "vessel": "Superdong XI",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Phổ thông",
+          "priceAdult": 340000,
+          "priceChild": 250000
+        },
+        {
+          "code": "BUS",
+          "name": "Thương gia",
+          "priceAdult": 520000,
+          "priceChild": 380000
+        }
+      ]
+    },
+    {
+      "id": "1002",
+      "routeId": 101,
+      "date": "2026-03-21",
+      "departTime": "13:30",
+      "arriveTime": "16:00",
+      "vessel": "Superdong XII",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Phổ thông",
+          "priceAdult": 340000,
+          "priceChild": 250000
+        },
+        {
+          "code": "BUS",
+          "name": "Thương gia",
+          "priceAdult": 520000,
+          "priceChild": 380000
+        }
+      ]
+    },
+    {
+      "id": "1003",
+      "routeId": 102,
+      "date": "2026-03-22",
+      "departTime": "09:00",
+      "arriveTime": "10:30",
+      "vessel": "Superdong VIII",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Phổ thông",
+          "priceAdult": 280000,
+          "priceChild": 200000
+        },
+        {
+          "code": "BUS",
+          "name": "Thương gia",
+          "priceAdult": 430000,
+          "priceChild": 320000
+        }
+      ]
+    },
+    {
+      "id": "1004",
+      "routeId": 103,
+      "date": "2026-03-23",
+      "departTime": "08:15",
+      "arriveTime": "11:00",
+      "vessel": "Trưng Trắc",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Phổ thông",
+          "priceAdult": 600000,
+          "priceChild": 450000
+        },
+        {
+          "code": "BUS",
+          "name": "Thương gia",
+          "priceAdult": 780000,
+          "priceChild": 600000
+        }
+      ]
+    },
+    {
+      "id": "1005",
+      "routeId": 103,
+      "date": "2026-03-24",
+      "departTime": "13:00",
+      "arriveTime": "15:45",
+      "vessel": "Trưng Nhị",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Phổ thông",
+          "priceAdult": 600000,
+          "priceChild": 450000
+        },
+        {
+          "code": "BUS",
+          "name": "Thương gia",
+          "priceAdult": 780000,
+          "priceChild": 600000
+        }
+      ]
+    }
+  ],
+  "bookings": [
+    {
+      "id": "ba77",
+      "contact": {
+        "name": "Guest",
+        "phone": "",
+        "email": ""
+      },
+      "items": [
+        {
+          "sailingId": "1001",
+          "routeLabel": "Rạch Giá → Phú Quốc",
+          "date": "2026-03-21",
+          "departTime": "07:30",
+          "arriveTime": "10:00",
+          "vessel": "Superdong XI",
+          "classCode": "ECO",
+          "className": "Phổ thông",
+          "price": {
+            "adult": 340000,
+            "child": 250000
+          },
+          "pax": {
+            "adult": 2,
+            "child": 0
+          },
+          "total": 680000,
+          "key": "1001-ECO"
+        }
+      ],
+      "total": 680000,
+      "createdAt": "2026-03-20T13:57:09.845Z"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
