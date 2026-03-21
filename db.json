@@ -247,6 +247,216 @@
       ],
       "total": 2450000,
       "createdAt": "2026-03-21T08:28:25.657Z"
+    },
+    {
+      "id": "5d0a",
+      "contact": {
+        "name": "Nguyen Quoc Hau",
+        "phone": "0896673828",
+        "email": "nguyenquochau080@gmail.com",
+        "invoice": {
+          "buyer": "",
+          "company": "",
+          "tax": "",
+          "address": ""
+        }
+      },
+      "items": [
+        {
+          "sailingId": "1001",
+          "routeLabel": "Rạch Giá → Phú Quốc",
+          "date": "2026-03-21",
+          "departTime": "07:30",
+          "arriveTime": "10:00",
+          "vessel": "Superdong XI",
+          "classCode": "BUS",
+          "className": "Thương gia",
+          "price": {
+            "adult": 520000,
+            "child": 380000
+          },
+          "pax": {
+            "adult": 1,
+            "child": 1
+          },
+          "passengers": [
+            {
+              "name": "Nguyen Quoc Hau",
+              "type": "adult",
+              "seat": ""
+            },
+            {
+              "name": "NGOCTHAO",
+              "type": "child",
+              "seat": ""
+            }
+          ],
+          "total": 900000,
+          "key": "1001-BUS"
+        }
+      ],
+      "total": 900000,
+      "createdAt": "2026-03-21T08:38:24.379Z"
+    },
+    {
+      "id": "b593",
+      "contact": {
+        "name": "Nguyen Quoc Hau",
+        "phone": "0896673828",
+        "email": "nguyenquochau080@gmail.com",
+        "invoice": {
+          "buyer": "",
+          "company": "",
+          "tax": "",
+          "address": ""
+        }
+      },
+      "items": [
+        {
+          "sailingId": "1001",
+          "routeLabel": "Rạch Giá → Phú Quốc",
+          "date": "2026-03-21",
+          "departTime": "07:30",
+          "arriveTime": "10:00",
+          "vessel": "Superdong XI",
+          "classCode": "BUS",
+          "className": "Thương gia",
+          "price": {
+            "adult": 520000,
+            "child": 380000
+          },
+          "pax": {
+            "adult": 1,
+            "child": 1
+          },
+          "passengers": [
+            {
+              "name": "Nguyen Quoc Hau",
+              "type": "adult",
+              "seat": ""
+            },
+            {
+              "name": "NGOCTHAO",
+              "type": "child",
+              "seat": ""
+            }
+          ],
+          "total": 900000,
+          "key": "1001-BUS"
+        }
+      ],
+      "total": 900000,
+      "createdAt": "2026-03-21T08:38:29.188Z"
+    },
+    {
+      "id": "a0c5",
+      "contact": {
+        "name": "Nguyen Quoc Hau",
+        "phone": "0896673828",
+        "email": "nguyenquochau080@gmail.com",
+        "invoice": {
+          "buyer": "",
+          "company": "",
+          "tax": "",
+          "address": ""
+        }
+      },
+      "items": [
+        {
+          "sailingId": "1001",
+          "routeLabel": "Rạch Giá → Phú Quốc",
+          "date": "2026-03-21",
+          "departTime": "07:30",
+          "arriveTime": "10:00",
+          "vessel": "Superdong XI",
+          "classCode": "BUS",
+          "className": "Thương gia",
+          "price": {
+            "adult": 520000,
+            "child": 380000
+          },
+          "pax": {
+            "adult": 1,
+            "child": 1
+          },
+          "passengers": [
+            {
+              "name": "Nguyen Quoc Hau",
+              "type": "adult",
+              "seat": ""
+            },
+            {
+              "name": "NGOCTHAO",
+              "type": "child",
+              "seat": ""
+            }
+          ],
+          "total": 900000,
+          "key": "1001-BUS"
+        }
+      ],
+      "total": 900000,
+      "createdAt": "2026-03-21T08:39:02.371Z"
+    },
+    {
+      "id": "0a00",
+      "contact": {
+        "name": "Nguyen Quoc Hau",
+        "phone": "0896673828",
+        "email": "nguyenquochau080@gmail.com",
+        "invoice": {
+          "buyer": "",
+          "company": "",
+          "tax": "",
+          "address": ""
+        }
+      },
+      "items": [
+        {
+          "sailingId": "1003",
+          "routeLabel": "Hà Tiên → Phú Quốc",
+          "date": "2026-03-22",
+          "departTime": "09:00",
+          "arriveTime": "10:30",
+          "vessel": "Superdong VIII",
+          "classCode": "BUS",
+          "className": "Thương gia",
+          "price": {
+            "adult": 430000,
+            "child": 320000
+          },
+          "pax": {
+            "adult": 3,
+            "child": 1
+          },
+          "passengers": [
+            {
+              "name": "Nguyen Quoc Hau",
+              "type": "adult",
+              "seat": ""
+            },
+            {
+              "name": "KIM NGOC",
+              "type": "adult",
+              "seat": ""
+            },
+            {
+              "name": "NGOC THAO",
+              "type": "adult",
+              "seat": ""
+            },
+            {
+              "name": "PHUC",
+              "type": "child",
+              "seat": ""
+            }
+          ],
+          "total": 1610000,
+          "key": "1003-BUS"
+        }
+      ],
+      "total": 1610000,
+      "createdAt": "2026-03-21T08:45:03.759Z"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
