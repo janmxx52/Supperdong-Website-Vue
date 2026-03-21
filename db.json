@@ -195,6 +195,58 @@
       ],
       "total": 680000,
       "createdAt": "2026-03-20T13:57:09.845Z"
+    },
+    {
+      "id": "5de9",
+      "contact": {
+        "name": "Guest",
+        "phone": "",
+        "email": ""
+      },
+      "items": [
+        {
+          "sailingId": "1003",
+          "routeLabel": "Hà Tiên → Phú Quốc",
+          "date": "2026-03-22",
+          "departTime": "09:00",
+          "arriveTime": "10:30",
+          "vessel": "Superdong VIII",
+          "classCode": "ECO",
+          "className": "Phổ thông",
+          "price": {
+            "adult": 280000,
+            "child": 200000
+          },
+          "pax": {
+            "adult": 4,
+            "child": 2
+          },
+          "total": 1520000,
+          "key": "1003-ECO"
+        },
+        {
+          "sailingId": "1001",
+          "routeLabel": "Rạch Giá → Phú Quốc",
+          "date": "2026-03-21",
+          "departTime": "07:30",
+          "arriveTime": "10:00",
+          "vessel": "Superdong XI",
+          "classCode": "ECO",
+          "className": "Phổ thông",
+          "price": {
+            "adult": 340000,
+            "child": 250000
+          },
+          "pax": {
+            "adult": 2,
+            "child": 1
+          },
+          "total": 930000,
+          "key": "1001-ECO"
+        }
+      ],
+      "total": 2450000,
+      "createdAt": "2026-03-21T08:28:25.657Z"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
