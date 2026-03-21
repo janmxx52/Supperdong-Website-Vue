@@ -158,7 +158,6 @@
           <p class="value total">{{ total.toLocaleString() }} đ</p>
         </div>
       </div>
-      <p class="note">Thanh toán giả lập: lưu booking vào JSON Server (bảng bookings).</p>
     </section>
 
     <div class="actions">

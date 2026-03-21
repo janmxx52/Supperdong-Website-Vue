@@ -1,34 +1,21 @@
 <template>
   <header class="hero">
     <div class="navbar">
-      <router-link to="/" class="logo">Ferry Islands</router-link>
+      <router-link to="/" class="logo">GDU Islands</router-link>
       <nav>
         <router-link to="/" class="nav-link">Trang chủ</router-link>
-        <a class="nav-link" href="#hotline">Hotline: 0297 123 456</a>
+        <a class="nav-link" href="#hotline">Hotline: 089 667 3828</a>
       </nav>
-      <div class="cart" @click="openCart">
-        <span class="icon">🛳️</span>
-        <span class="badge">{{ totalPax }}</span>
-        <span class="label">Giỏ vé</span>
+      <div class="auth-buttons">
+        <button class="ghost" @click="$emit('open-login')">Đăng nhập</button>
+        <button class="primary" @click="$emit('open-register')">Đăng ký</button>
       </div>
     </div>
   </header>
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { useCartStore } from '@/stores/cart'
-import { defineEmits } from 'vue'
-
-const cartStore = useCartStore()
-const emit = defineEmits(['open-cart'])
-
-const totalPax = computed(() => {
-  const t = cartStore.totalPassengers
-  return t.adult + t.child
-})
-
-const openCart = () => emit('open-cart')
+// Header chỉ phát sự kiện mở modal đăng nhập/đăng ký
 </script>
 
 <style scoped>
@@ -63,29 +50,24 @@ nav {
 .nav-link:hover {
   color: #ffd166;
 }
-.cart {
+.auth-buttons {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  gap: 10px;
+}
+.ghost,
+.primary {
+  padding: 9px 14px;
+  border-radius: 10px;
+  border: 2px solid #ffd166;
+  font-weight: 700;
   cursor: pointer;
-  background: #10365b;
-  padding: 8px 12px;
-  border-radius: 12px;
-  transition: background 0.12s;
 }
-.cart:hover {
-  background: #154a7a;
+.ghost {
+  background: transparent;
+  color: #ffd166;
 }
-.badge {
-  background: #ff4d4f;
-  color: #fff;
-  border-radius: 999px;
-  padding: 4px 8px;
-  font-weight: 700;
-  min-width: 28px;
-  text-align: center;
-}
-.label {
-  font-weight: 700;
+.primary {
+  background: #ffd166;
+  color: #0c2b44;
 }
 </style>

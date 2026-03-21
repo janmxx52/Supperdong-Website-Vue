@@ -457,6 +457,56 @@
       ],
       "total": 1610000,
       "createdAt": "2026-03-21T08:45:03.759Z"
+    },
+    {
+      "id": "4522",
+      "contact": {
+        "name": "nguyen",
+        "phone": "0896673828",
+        "email": "nguyenquochau080@gmail.com",
+        "invoice": {
+          "buyer": "",
+          "company": "",
+          "tax": "",
+          "address": ""
+        }
+      },
+      "items": [
+        {
+          "sailingId": "1003",
+          "routeLabel": "Hà Tiên → Phú Quốc",
+          "date": "2026-03-22",
+          "departTime": "09:00",
+          "arriveTime": "10:30",
+          "vessel": "Superdong VIII",
+          "classCode": "BUS",
+          "className": "Thương gia",
+          "price": {
+            "adult": 430000,
+            "child": 320000
+          },
+          "pax": {
+            "adult": 2,
+            "child": 0
+          },
+          "passengers": [
+            {
+              "name": "nguyen",
+              "type": "adult",
+              "seat": ""
+            },
+            {
+              "name": "ngoc",
+              "type": "adult",
+              "seat": ""
+            }
+          ],
+          "total": 860000,
+          "key": "1003-BUS"
+        }
+      ],
+      "total": 860000,
+      "createdAt": "2026-03-21T09:05:55.117Z"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

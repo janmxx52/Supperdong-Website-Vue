@@ -1,15 +1,10 @@
 <template>
   <div id="app">
-    <HeaderCom @open-cart="showCart = true" />
+    <HeaderCom @open-login="showLogin = true" @open-register="showRegister = true" />
     <router-view />
     <FooterCom />
-    <CardModal
-      :show="showCart"
-      :cart-items="cartStore.cartItems"
-      @close="showCart = false"
-      @remove="removeItem"
-      @checkout="checkout"
-    />
+    <LoginModal :show="showLogin" @close="showLogin = false" />
+    <RegisterModal :show="showRegister" @close="showRegister = false" />
   </div>
 </template>
 
@@ -17,27 +12,11 @@
 import { ref } from 'vue'
 import HeaderCom from './components/HeaderCom.vue'
 import FooterCom from './components/FooterCom.vue'
-import CardModal from './components/CardModal.vue'
-import { useCartStore } from './stores/cart'
+import LoginModal from './components/LoginModal.vue'
+import RegisterModal from './components/RegisterModal.vue'
 
-const showCart = ref(false)
-const cartStore = useCartStore()
-
-const removeItem = (key) => {
-  cartStore.removeItem(key)
-}
-
-const checkout = async () => {
-  if (!cartStore.cartItems.length) return
-  try {
-    const bookingId = await cartStore.checkout()
-    showCart.value = false
-    alert(`Đặt chỗ thành công (JSON Server)\nMã: ${bookingId}`)
-  } catch (err) {
-    alert('Thanh toán thất bại, vui lòng thử lại.')
-    console.error(err)
-  }
-}
+const showLogin = ref(false)
+const showRegister = ref(false)
 </script>
 
 <style>

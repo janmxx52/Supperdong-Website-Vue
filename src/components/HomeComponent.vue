@@ -1,7 +1,7 @@
 <template>
   <section class="hero-search">
     <div class="hero-text">
-      <p class="eyebrow">Ferry Booking</p>
+      <p class="eyebrow">GDU Booking</p>
       <h1>Đặt vé tàu ra đảo nhanh gọn</h1>
       <p class="sub">
         Chọn tuyến – chọn giờ – xác nhận. Dữ liệu mẫu Superdong / Côn Đảo Express.
