@@ -29,8 +29,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 40px;
-}
+  padding: 12px 32px;
+  }
 .logo {
   font-size: 24px;
   font-weight: 800;
@@ -69,5 +69,22 @@ nav {
 .primary {
   background: #ffd166;
   color: #0c2b44;
+}
+@media (max-width: 720px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 18px;
+  }
+  nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .auth-buttons {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
 </style>

@@ -66,6 +66,7 @@ const durationLabel = computed(() => {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 .card-header {
   display: flex;
@@ -137,5 +138,22 @@ const durationLabel = computed(() => {
 .btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+@media (max-width: 540px) {
+  .times {
+    grid-template-columns: 1fr;
+  }
+  .arrow {
+    display: none;
+  }
+  .price-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 </style>

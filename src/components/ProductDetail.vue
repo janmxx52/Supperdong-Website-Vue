@@ -539,5 +539,19 @@ input {
   .stepper {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .primary,
+  .ghost {
+    width: 100%;
+  }
+  .panel {
+    padding: 14px;
+  }
+  .summary {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

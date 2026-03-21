@@ -3,32 +3,56 @@
     {
       "id": "1",
       "code": "RG",
-      "name": "Rạch Giá",
-      "province": "Kiên Giang"
+      "name": "Rach Gia",
+      "province": "Kien Giang"
     },
     {
       "id": "2",
       "code": "PQ",
-      "name": "Phú Quốc",
-      "province": "Kiên Giang"
+      "name": "Phu Quoc",
+      "province": "Kien Giang"
     },
     {
       "id": "3",
       "code": "HT",
-      "name": "Hà Tiên",
-      "province": "Kiên Giang"
+      "name": "Ha Tien",
+      "province": "Kien Giang"
     },
     {
       "id": "4",
       "code": "CD",
-      "name": "Côn Đảo",
-      "province": "Bà Rịa - Vũng Tàu"
+      "name": "Con Dao",
+      "province": "Ba Ria - Vung Tau"
     },
     {
       "id": "5",
       "code": "ST",
-      "name": "Sóc Trăng",
-      "province": "Sóc Trăng"
+      "name": "Soc Trang",
+      "province": "Soc Trang"
+    },
+    {
+      "id": "6",
+      "code": "VT",
+      "name": "Vung Tau",
+      "province": "Ba Ria - Vung Tau"
+    },
+    {
+      "id": "7",
+      "code": "CM",
+      "name": "Ca Mau",
+      "province": "Ca Mau"
+    },
+    {
+      "id": "8",
+      "code": "QN",
+      "name": "Quang Ngai",
+      "province": "Quang Ngai"
+    },
+    {
+      "id": "9",
+      "code": "LS",
+      "name": "Ly Son",
+      "province": "Quang Ngai"
     }
   ],
   "routes": [
@@ -49,6 +73,36 @@
       "fromPort": "ST",
       "toPort": "CD",
       "durationMinutes": 165
+    },
+    {
+      "id": "104",
+      "fromPort": "VT",
+      "toPort": "CD",
+      "durationMinutes": 210
+    },
+    {
+      "id": "105",
+      "fromPort": "CM",
+      "toPort": "PQ",
+      "durationMinutes": 120
+    },
+    {
+      "id": "106",
+      "fromPort": "QN",
+      "toPort": "LS",
+      "durationMinutes": 75
+    },
+    {
+      "id": "107",
+      "fromPort": "HT",
+      "toPort": "CD",
+      "durationMinutes": 180
+    },
+    {
+      "id": "108",
+      "fromPort": "ST",
+      "toPort": "PQ",
+      "durationMinutes": 140
     }
   ],
   "sailings": [
@@ -62,13 +116,13 @@
       "classOptions": [
         {
           "code": "ECO",
-          "name": "Phổ thông",
+          "name": "Pho thong",
           "priceAdult": 340000,
           "priceChild": 250000
         },
         {
           "code": "BUS",
-          "name": "Thương gia",
+          "name": "Thuong gia",
           "priceAdult": 520000,
           "priceChild": 380000
         }
@@ -84,13 +138,13 @@
       "classOptions": [
         {
           "code": "ECO",
-          "name": "Phổ thông",
+          "name": "Pho thong",
           "priceAdult": 340000,
           "priceChild": 250000
         },
         {
           "code": "BUS",
-          "name": "Thương gia",
+          "name": "Thuong gia",
           "priceAdult": 520000,
           "priceChild": 380000
         }
@@ -106,13 +160,13 @@
       "classOptions": [
         {
           "code": "ECO",
-          "name": "Phổ thông",
+          "name": "Pho thong",
           "priceAdult": 280000,
           "priceChild": 200000
         },
         {
           "code": "BUS",
-          "name": "Thương gia",
+          "name": "Thuong gia",
           "priceAdult": 430000,
           "priceChild": 320000
         }
@@ -124,17 +178,17 @@
       "date": "2026-03-23",
       "departTime": "08:15",
       "arriveTime": "11:00",
-      "vessel": "Trưng Trắc",
+      "vessel": "Trung Trac",
       "classOptions": [
         {
           "code": "ECO",
-          "name": "Phổ thông",
+          "name": "Pho thong",
           "priceAdult": 600000,
           "priceChild": 450000
         },
         {
           "code": "BUS",
-          "name": "Thương gia",
+          "name": "Thuong gia",
           "priceAdult": 780000,
           "priceChild": 600000
         }
@@ -146,113 +200,205 @@
       "date": "2026-03-24",
       "departTime": "13:00",
       "arriveTime": "15:45",
-      "vessel": "Trưng Nhị",
+      "vessel": "Trung Nhi",
       "classOptions": [
         {
           "code": "ECO",
-          "name": "Phổ thông",
+          "name": "Pho thong",
           "priceAdult": 600000,
           "priceChild": 450000
         },
         {
           "code": "BUS",
-          "name": "Thương gia",
+          "name": "Thuong gia",
           "priceAdult": 780000,
           "priceChild": 600000
+        }
+      ]
+    },
+    {
+      "id": "1006",
+      "routeId": 104,
+      "date": "2026-03-22",
+      "departTime": "07:00",
+      "arriveTime": "10:30",
+      "vessel": "Con Dao Express 36",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 850000,
+          "priceChild": 650000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 1100000,
+          "priceChild": 900000
+        }
+      ]
+    },
+    {
+      "id": "1007",
+      "routeId": 104,
+      "date": "2026-03-23",
+      "departTime": "13:00",
+      "arriveTime": "16:30",
+      "vessel": "Con Dao Express 36",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 850000,
+          "priceChild": 650000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 1100000,
+          "priceChild": 900000
+        }
+      ]
+    },
+    {
+      "id": "1008",
+      "routeId": 105,
+      "date": "2026-03-21",
+      "departTime": "08:00",
+      "arriveTime": "10:00",
+      "vessel": "Phu Quoc Express 5",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 420000,
+          "priceChild": 320000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 620000,
+          "priceChild": 480000
+        }
+      ]
+    },
+    {
+      "id": "1009",
+      "routeId": 105,
+      "date": "2026-03-22",
+      "departTime": "14:30",
+      "arriveTime": "16:30",
+      "vessel": "Phu Quoc Express 5",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 420000,
+          "priceChild": 320000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 620000,
+          "priceChild": 480000
+        }
+      ]
+    },
+    {
+      "id": "1010",
+      "routeId": 106,
+      "date": "2026-03-21",
+      "departTime": "07:00",
+      "arriveTime": "08:15",
+      "vessel": "Super Bien Dong",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 240000,
+          "priceChild": 180000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 360000,
+          "priceChild": 270000
+        }
+      ]
+    },
+    {
+      "id": "1011",
+      "routeId": 106,
+      "date": "2026-03-22",
+      "departTime": "12:00",
+      "arriveTime": "13:15",
+      "vessel": "Super Bien Dong",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 240000,
+          "priceChild": 180000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 360000,
+          "priceChild": 270000
+        }
+      ]
+    },
+    {
+      "id": "1012",
+      "routeId": 107,
+      "date": "2026-03-24",
+      "departTime": "07:30",
+      "arriveTime": "10:30",
+      "vessel": "Express CD28",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 700000,
+          "priceChild": 520000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 980000,
+          "priceChild": 760000
+        }
+      ]
+    },
+    {
+      "id": "1013",
+      "routeId": 108,
+      "date": "2026-03-25",
+      "departTime": "09:00",
+      "arriveTime": "11:20",
+      "vessel": "PQ Speed",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 360000,
+          "priceChild": 260000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 520000,
+          "priceChild": 390000
         }
       ]
     }
   ],
   "bookings": [
     {
-      "id": "ba77",
+      "id": "1418",
       "contact": {
-        "name": "Guest",
-        "phone": "",
-        "email": ""
-      },
-      "items": [
-        {
-          "sailingId": "1001",
-          "routeLabel": "Rạch Giá → Phú Quốc",
-          "date": "2026-03-21",
-          "departTime": "07:30",
-          "arriveTime": "10:00",
-          "vessel": "Superdong XI",
-          "classCode": "ECO",
-          "className": "Phổ thông",
-          "price": {
-            "adult": 340000,
-            "child": 250000
-          },
-          "pax": {
-            "adult": 2,
-            "child": 0
-          },
-          "total": 680000,
-          "key": "1001-ECO"
-        }
-      ],
-      "total": 680000,
-      "createdAt": "2026-03-20T13:57:09.845Z"
-    },
-    {
-      "id": "5de9",
-      "contact": {
-        "name": "Guest",
-        "phone": "",
-        "email": ""
-      },
-      "items": [
-        {
-          "sailingId": "1003",
-          "routeLabel": "Hà Tiên → Phú Quốc",
-          "date": "2026-03-22",
-          "departTime": "09:00",
-          "arriveTime": "10:30",
-          "vessel": "Superdong VIII",
-          "classCode": "ECO",
-          "className": "Phổ thông",
-          "price": {
-            "adult": 280000,
-            "child": 200000
-          },
-          "pax": {
-            "adult": 4,
-            "child": 2
-          },
-          "total": 1520000,
-          "key": "1003-ECO"
-        },
-        {
-          "sailingId": "1001",
-          "routeLabel": "Rạch Giá → Phú Quốc",
-          "date": "2026-03-21",
-          "departTime": "07:30",
-          "arriveTime": "10:00",
-          "vessel": "Superdong XI",
-          "classCode": "ECO",
-          "className": "Phổ thông",
-          "price": {
-            "adult": 340000,
-            "child": 250000
-          },
-          "pax": {
-            "adult": 2,
-            "child": 1
-          },
-          "total": 930000,
-          "key": "1001-ECO"
-        }
-      ],
-      "total": 2450000,
-      "createdAt": "2026-03-21T08:28:25.657Z"
-    },
-    {
-      "id": "5d0a",
-      "contact": {
-        "name": "Nguyen Quoc Hau",
-        "phone": "0896673828",
+        "name": "NguyenQuocHau",
+        "phone": "123123123",
         "email": "nguyenquochau080@gmail.com",
         "invoice": {
           "buyer": "",
@@ -264,226 +410,16 @@
       "items": [
         {
           "sailingId": "1001",
-          "routeLabel": "Rạch Giá → Phú Quốc",
+          "routeLabel": "Rach Gia → Phu Quoc",
           "date": "2026-03-21",
           "departTime": "07:30",
           "arriveTime": "10:00",
           "vessel": "Superdong XI",
           "classCode": "BUS",
-          "className": "Thương gia",
+          "className": "Thuong gia",
           "price": {
             "adult": 520000,
             "child": 380000
-          },
-          "pax": {
-            "adult": 1,
-            "child": 1
-          },
-          "passengers": [
-            {
-              "name": "Nguyen Quoc Hau",
-              "type": "adult",
-              "seat": ""
-            },
-            {
-              "name": "NGOCTHAO",
-              "type": "child",
-              "seat": ""
-            }
-          ],
-          "total": 900000,
-          "key": "1001-BUS"
-        }
-      ],
-      "total": 900000,
-      "createdAt": "2026-03-21T08:38:24.379Z"
-    },
-    {
-      "id": "b593",
-      "contact": {
-        "name": "Nguyen Quoc Hau",
-        "phone": "0896673828",
-        "email": "nguyenquochau080@gmail.com",
-        "invoice": {
-          "buyer": "",
-          "company": "",
-          "tax": "",
-          "address": ""
-        }
-      },
-      "items": [
-        {
-          "sailingId": "1001",
-          "routeLabel": "Rạch Giá → Phú Quốc",
-          "date": "2026-03-21",
-          "departTime": "07:30",
-          "arriveTime": "10:00",
-          "vessel": "Superdong XI",
-          "classCode": "BUS",
-          "className": "Thương gia",
-          "price": {
-            "adult": 520000,
-            "child": 380000
-          },
-          "pax": {
-            "adult": 1,
-            "child": 1
-          },
-          "passengers": [
-            {
-              "name": "Nguyen Quoc Hau",
-              "type": "adult",
-              "seat": ""
-            },
-            {
-              "name": "NGOCTHAO",
-              "type": "child",
-              "seat": ""
-            }
-          ],
-          "total": 900000,
-          "key": "1001-BUS"
-        }
-      ],
-      "total": 900000,
-      "createdAt": "2026-03-21T08:38:29.188Z"
-    },
-    {
-      "id": "a0c5",
-      "contact": {
-        "name": "Nguyen Quoc Hau",
-        "phone": "0896673828",
-        "email": "nguyenquochau080@gmail.com",
-        "invoice": {
-          "buyer": "",
-          "company": "",
-          "tax": "",
-          "address": ""
-        }
-      },
-      "items": [
-        {
-          "sailingId": "1001",
-          "routeLabel": "Rạch Giá → Phú Quốc",
-          "date": "2026-03-21",
-          "departTime": "07:30",
-          "arriveTime": "10:00",
-          "vessel": "Superdong XI",
-          "classCode": "BUS",
-          "className": "Thương gia",
-          "price": {
-            "adult": 520000,
-            "child": 380000
-          },
-          "pax": {
-            "adult": 1,
-            "child": 1
-          },
-          "passengers": [
-            {
-              "name": "Nguyen Quoc Hau",
-              "type": "adult",
-              "seat": ""
-            },
-            {
-              "name": "NGOCTHAO",
-              "type": "child",
-              "seat": ""
-            }
-          ],
-          "total": 900000,
-          "key": "1001-BUS"
-        }
-      ],
-      "total": 900000,
-      "createdAt": "2026-03-21T08:39:02.371Z"
-    },
-    {
-      "id": "0a00",
-      "contact": {
-        "name": "Nguyen Quoc Hau",
-        "phone": "0896673828",
-        "email": "nguyenquochau080@gmail.com",
-        "invoice": {
-          "buyer": "",
-          "company": "",
-          "tax": "",
-          "address": ""
-        }
-      },
-      "items": [
-        {
-          "sailingId": "1003",
-          "routeLabel": "Hà Tiên → Phú Quốc",
-          "date": "2026-03-22",
-          "departTime": "09:00",
-          "arriveTime": "10:30",
-          "vessel": "Superdong VIII",
-          "classCode": "BUS",
-          "className": "Thương gia",
-          "price": {
-            "adult": 430000,
-            "child": 320000
-          },
-          "pax": {
-            "adult": 3,
-            "child": 1
-          },
-          "passengers": [
-            {
-              "name": "Nguyen Quoc Hau",
-              "type": "adult",
-              "seat": ""
-            },
-            {
-              "name": "KIM NGOC",
-              "type": "adult",
-              "seat": ""
-            },
-            {
-              "name": "NGOC THAO",
-              "type": "adult",
-              "seat": ""
-            },
-            {
-              "name": "PHUC",
-              "type": "child",
-              "seat": ""
-            }
-          ],
-          "total": 1610000,
-          "key": "1003-BUS"
-        }
-      ],
-      "total": 1610000,
-      "createdAt": "2026-03-21T08:45:03.759Z"
-    },
-    {
-      "id": "4522",
-      "contact": {
-        "name": "nguyen",
-        "phone": "0896673828",
-        "email": "nguyenquochau080@gmail.com",
-        "invoice": {
-          "buyer": "",
-          "company": "",
-          "tax": "",
-          "address": ""
-        }
-      },
-      "items": [
-        {
-          "sailingId": "1003",
-          "routeLabel": "Hà Tiên → Phú Quốc",
-          "date": "2026-03-22",
-          "departTime": "09:00",
-          "arriveTime": "10:30",
-          "vessel": "Superdong VIII",
-          "classCode": "BUS",
-          "className": "Thương gia",
-          "price": {
-            "adult": 430000,
-            "child": 320000
           },
           "pax": {
             "adult": 2,
@@ -491,22 +427,22 @@
           },
           "passengers": [
             {
-              "name": "nguyen",
+              "name": "NguyenQuocHau",
               "type": "adult",
               "seat": ""
             },
             {
-              "name": "ngoc",
+              "name": "Hau",
               "type": "adult",
               "seat": ""
             }
           ],
-          "total": 860000,
-          "key": "1003-BUS"
+          "total": 1040000,
+          "key": "1001-BUS"
         }
       ],
-      "total": 860000,
-      "createdAt": "2026-03-21T09:05:55.117Z"
+      "total": 1040000,
+      "createdAt": "2026-03-21T12:11:58.694Z"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

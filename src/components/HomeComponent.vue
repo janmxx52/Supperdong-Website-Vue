@@ -160,9 +160,16 @@ onMounted(async () => {
 @media (max-width: 900px) {
   .hero-search {
     grid-template-columns: 1fr;
+    padding: 30px 18px;
   }
   .search-btn {
     grid-column: span 1;
+  }
+  .search-card {
+    grid-template-columns: 1fr;
+  }
+  .sailing-list {
+    grid-template-columns: 1fr;
   }
 }
 </style>
