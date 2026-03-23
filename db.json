@@ -195,11 +195,10 @@
       ]
     },
     {
-      "id": "1005",
       "routeId": 103,
       "date": "2026-03-24",
       "departTime": "13:00",
-      "arriveTime": "15:45",
+      "arriveTime": "19:45",
       "vessel": "Trung Nhi",
       "classOptions": [
         {
@@ -214,7 +213,8 @@
           "priceAdult": 780000,
           "priceChild": 600000
         }
-      ]
+      ],
+      "id": "1005"
     },
     {
       "id": "1006",
@@ -391,13 +391,57 @@
           "priceChild": 390000
         }
       ]
+    },
+    {
+      "id": "5999",
+      "routeId": "105",
+      "date": "2026-03-24",
+      "departTime": "17:35",
+      "arriveTime": "19:45",
+      "vessel": "NQH",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 150000,
+          "priceChild": 100000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 200000,
+          "priceChild": 2509000
+        }
+      ]
+    },
+    {
+      "id": "6798",
+      "routeId": 103,
+      "date": "2026-03-23",
+      "departTime": "08:45",
+      "arriveTime": "08:38",
+      "vessel": "GDU",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 200000,
+          "priceChild": 150000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 300000,
+          "priceChild": 200000
+        }
+      ]
     }
   ],
   "bookings": [
     {
-      "id": "1418",
+      "id": "dcc7",
       "contact": {
-        "name": "NguyenQuocHau",
+        "name": "Hau",
         "phone": "123123123",
         "email": "nguyenquochau080@gmail.com",
         "invoice": {
@@ -409,40 +453,135 @@
       },
       "items": [
         {
-          "sailingId": "1001",
-          "routeLabel": "Rach Gia → Phu Quoc",
-          "date": "2026-03-21",
-          "departTime": "07:30",
-          "arriveTime": "10:00",
-          "vessel": "Superdong XI",
+          "sailingId": "1004",
+          "routeLabel": "Soc Trang → Con Dao",
+          "date": "2026-03-23",
+          "departTime": "08:15",
+          "arriveTime": "11:00",
+          "vessel": "Trung Trac",
           "classCode": "BUS",
           "className": "Thuong gia",
           "price": {
-            "adult": 520000,
-            "child": 380000
+            "adult": 780000,
+            "child": 600000
           },
           "pax": {
-            "adult": 2,
-            "child": 0
+            "adult": 1,
+            "child": 1
           },
           "passengers": [
-            {
-              "name": "NguyenQuocHau",
-              "type": "adult",
-              "seat": ""
-            },
             {
               "name": "Hau",
               "type": "adult",
               "seat": ""
+            },
+            {
+              "name": "Ngoc",
+              "type": "child",
+              "seat": ""
             }
           ],
-          "total": 1040000,
-          "key": "1001-BUS"
+          "total": 1380000,
+          "key": "1004-BUS"
         }
       ],
-      "total": 1040000,
-      "createdAt": "2026-03-21T12:11:58.694Z"
+      "total": 1380000,
+      "createdAt": "2026-03-23T06:16:41.510Z"
+    },
+    {
+      "id": "2726",
+      "contact": {
+        "name": "Ngoc",
+        "phone": "123123123",
+        "email": "huynhnhattuong4405@gmail.com",
+        "invoice": {
+          "buyer": "",
+          "company": "",
+          "tax": "",
+          "address": ""
+        }
+      },
+      "items": [
+        {
+          "sailingId": "6798",
+          "routeLabel": "Soc Trang → Con Dao",
+          "date": "2026-03-23",
+          "departTime": "08:45",
+          "arriveTime": "08:38",
+          "vessel": "GDU",
+          "classCode": "BUS",
+          "className": "Thuong gia",
+          "price": {
+            "adult": 300000,
+            "child": 200000
+          },
+          "pax": {
+            "adult": 1,
+            "child": 1
+          },
+          "passengers": [
+            {
+              "name": "Ngoc",
+              "type": "adult",
+              "seat": ""
+            },
+            {
+              "name": "hu",
+              "type": "child",
+              "seat": ""
+            }
+          ],
+          "total": 500000,
+          "key": "6798-BUS"
+        }
+      ],
+      "total": 500000,
+      "createdAt": "2026-03-23T06:39:51.911Z"
+    },
+    {
+      "id": "9357",
+      "contact": {
+        "name": "Phuc",
+        "phone": "123123123",
+        "email": "nguyenquochau080@gmail.com",
+        "invoice": {
+          "buyer": "",
+          "company": "",
+          "tax": "",
+          "address": ""
+        }
+      },
+      "items": [
+        {
+          "sailingId": "1005",
+          "routeLabel": "Soc Trang → Con Dao",
+          "date": "2026-03-24",
+          "departTime": "13:00",
+          "arriveTime": "19:45",
+          "vessel": "Trung Nhi",
+          "classCode": "BUS",
+          "className": "Thuong gia",
+          "price": {
+            "adult": 780000,
+            "child": 600000
+          },
+          "pax": {
+            "adult": 1,
+            "child": 0
+          },
+          "passengers": [
+            {
+              "name": "Phuc",
+              "type": "adult",
+              "seat": ""
+            }
+          ],
+          "total": 780000,
+          "key": "1005-BUS"
+        }
+      ],
+      "total": 780000,
+      "createdAt": "2026-03-23T06:50:12.354Z"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -17,7 +17,7 @@
       </label>
       <label class="field">
         <span>Ngày đi</span>
-        <input type="date" v-model="form.date" required />
+        <input type="date" v-model="form.date" :min="today" required />
       </label>
       <button type="submit" class="search-btn">Tìm chuyến</button>
     </form>
@@ -47,6 +47,7 @@ import { useSailingStore } from '@/stores/sailing'
 const store = useSailingStore()
 const sailings = ref([])
 const routes = ref([])
+const today = new Date().toISOString().slice(0, 10)
 
 const form = reactive({
   routeId: '',
