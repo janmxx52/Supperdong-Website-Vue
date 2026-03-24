@@ -32,12 +32,13 @@
 <script setup>
 import { computed, defineProps } from 'vue'
 import { useRouter } from 'vue-router'
-import { findRouteById } from '@/data/ferryData'
 
 const router = useRouter()
 const props = defineProps({
   sailing: { type: Object, required: true },
   routeLabel: { type: String, required: true },
+  routes: { type: Array, default: () => [] }
+
 })
 
 const gotoDetail = () => {
@@ -49,8 +50,9 @@ const minPrice = computed(() =>
 )
 
 const durationLabel = computed(() => {
-  const route = findRouteById(props.sailing.routeId)
+  const route = props.routes.find(r => Number(r.id) === Number(props.sailing.routeId))
   if (!route || !route.durationMinutes) return '—'
+
   const h = Math.floor(route.durationMinutes / 60)
   const m = route.durationMinutes % 60
   return `${h}h${m ? m : ''}`
@@ -62,11 +64,17 @@ const durationLabel = computed(() => {
   background: #f8fafc;
   border-radius: 14px;
   padding: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 12px 24px rgba(15, 69, 111, 0.08);
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(15, 69, 111, 0.12);
 }
 .card-header {
   display: flex;
@@ -122,14 +130,14 @@ const durationLabel = computed(() => {
 .price {
   margin: 0;
   font-size: 1.4rem;
-  color: #b30404;
+  color: #0c2b44;
   font-weight: 800;
 }
 .btn {
   padding: 10px 16px;
   border-radius: 10px;
   border: none;
-  background: #0c2b44;
+  background: linear-gradient(135deg, #0c2b44, #0f456f);
   color: #fff;
   font-weight: 700;
   cursor: pointer;

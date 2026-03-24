@@ -144,7 +144,7 @@
 
     <section class="panel" v-else-if="currentStep === 4">
       <h3>Thanh toán</h3>
-      <div class="summary">
+      <div class="summary highlight">
         <div>
           <p class="label">Hạng</p>
           <p class="value">{{ selectedClassName }}</p>
@@ -394,6 +394,12 @@ onMounted(async () => {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 12px;
+}
+.summary.highlight {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
 }
 .label {
   margin: 0;

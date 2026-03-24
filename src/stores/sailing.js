@@ -75,7 +75,7 @@ export const useSailingStore = defineStore('sailing', {
       if (!r) return ''
       const from = this.ports.find((p) => p.code === r.fromPort)?.name || r.fromPort
       const to = this.ports.find((p) => p.code === r.toPort)?.name || r.toPort
-      return `${from} → ${to}`
+      return `${from} → ${to}` //template string
     },
   },
   getters: {

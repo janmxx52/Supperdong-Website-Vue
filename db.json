@@ -103,6 +103,66 @@
       "fromPort": "ST",
       "toPort": "PQ",
       "durationMinutes": 140
+    },
+    {
+      "id": "109",
+      "fromPort": "RG",
+      "toPort": "CD",
+      "durationMinutes": 220
+    },
+    {
+      "id": "110",
+      "fromPort": "PQ",
+      "toPort": "CD",
+      "durationMinutes": 180
+    },
+    {
+      "id": "111",
+      "fromPort": "VT",
+      "toPort": "PQ",
+      "durationMinutes": 210
+    },
+    {
+      "id": "112",
+      "fromPort": "CM",
+      "toPort": "CD",
+      "durationMinutes": 230
+    },
+    {
+      "id": "113",
+      "fromPort": "HT",
+      "toPort": "CM",
+      "durationMinutes": 190
+    },
+    {
+      "id": "114",
+      "fromPort": "QN",
+      "toPort": "PQ",
+      "durationMinutes": 260
+    },
+    {
+      "id": "115",
+      "fromPort": "RG",
+      "toPort": "CM",
+      "durationMinutes": 210
+    },
+    {
+      "id": "116",
+      "fromPort": "VT",
+      "toPort": "PQ",
+      "durationMinutes": 200
+    },
+    {
+      "id": "117",
+      "fromPort": "ST",
+      "toPort": "VT",
+      "durationMinutes": 190
+    },
+    {
+      "id": "118",
+      "fromPort": "RG",
+      "toPort": "LS",
+      "durationMinutes": 300
     }
   ],
   "sailings": [
@@ -435,6 +495,94 @@
           "priceChild": 200000
         }
       ]
+    },
+    {
+      "id": "3907",
+      "routeId": 103,
+      "date": "2026-03-24",
+      "departTime": "06:40",
+      "arriveTime": "08:40",
+      "vessel": "GDU",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 150000,
+          "priceChild": 100000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 250000,
+          "priceChild": 200000
+        }
+      ]
+    },
+    {
+      "id": "cd41",
+      "routeId": 103,
+      "date": "2026-03-24",
+      "departTime": "09:40",
+      "arriveTime": "11:55",
+      "vessel": "GDU",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 260000,
+          "priceChild": 200000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 700000,
+          "priceChild": 500000
+        }
+      ]
+    },
+    {
+      "id": "f5a1",
+      "routeId": 103,
+      "date": "2026-03-24",
+      "departTime": "22:40",
+      "arriveTime": "12:40",
+      "vessel": "TRY",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 10000000,
+          "priceChild": 1900000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 2000000,
+          "priceChild": 30000
+        }
+      ]
+    },
+    {
+      "id": "e6ee",
+      "routeId": 113,
+      "date": "2026-03-24",
+      "departTime": "12:25",
+      "arriveTime": "01:25",
+      "vessel": "KN209",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 2090000,
+          "priceChild": 200000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 1800000,
+          "priceChild": 1000000
+        }
+      ]
     }
   ],
   "bookings": [
@@ -582,6 +730,131 @@
       ],
       "total": 780000,
       "createdAt": "2026-03-23T06:50:12.354Z"
+    },
+    {
+      "id": "55e9",
+      "contact": {
+        "name": "hau",
+        "phone": "123123123",
+        "email": "nguyenquochau080@gmail.com",
+        "invoice": {
+          "buyer": "",
+          "company": "",
+          "tax": "",
+          "address": ""
+        }
+      },
+      "items": [
+        {
+          "sailingId": "1005",
+          "routeLabel": "Soc Trang → Con Dao",
+          "date": "2026-03-24",
+          "departTime": "13:00",
+          "arriveTime": "19:45",
+          "vessel": "Trung Nhi",
+          "classCode": "BUS",
+          "className": "Thuong gia",
+          "price": {
+            "adult": 780000,
+            "child": 600000
+          },
+          "pax": {
+            "adult": 1,
+            "child": 2
+          },
+          "passengers": [
+            {
+              "name": "hau",
+              "type": "adult",
+              "seat": ""
+            },
+            {
+              "name": "H",
+              "type": "child",
+              "seat": ""
+            },
+            {
+              "name": "A",
+              "type": "child",
+              "seat": ""
+            }
+          ],
+          "total": 1980000,
+          "key": "1005-BUS"
+        }
+      ],
+      "total": 1980000,
+      "createdAt": "2026-03-23T07:28:17.680Z"
+    },
+    {
+      "id": "9e0c",
+      "contact": {
+        "name": "hAU",
+        "phone": "54221321",
+        "email": "nguyenquochau080@gmail.com",
+        "invoice": {
+          "buyer": "",
+          "company": "",
+          "tax": "",
+          "address": ""
+        }
+      },
+      "items": [
+        {
+          "sailingId": "f5a1",
+          "routeLabel": "Soc Trang → Con Dao",
+          "date": "2026-03-24",
+          "departTime": "22:40",
+          "arriveTime": "12:40",
+          "vessel": "TRY",
+          "classCode": "ECO",
+          "className": "Pho thong",
+          "price": {
+            "adult": 10000000,
+            "child": 1900000
+          },
+          "pax": {
+            "adult": 3,
+            "child": 3
+          },
+          "passengers": [
+            {
+              "name": "hAU",
+              "type": "adult",
+              "seat": ""
+            },
+            {
+              "name": "A",
+              "type": "adult",
+              "seat": ""
+            },
+            {
+              "name": "B",
+              "type": "adult",
+              "seat": ""
+            },
+            {
+              "name": "C",
+              "type": "child",
+              "seat": ""
+            },
+            {
+              "name": "D",
+              "type": "child",
+              "seat": ""
+            },
+            {
+              "name": "C",
+              "type": "child",
+              "seat": ""
+            }
+          ],
+          "total": 35700000,
+          "key": "f5a1-ECO"
+        }
+      ],
+      "total": 35700000,
+      "createdAt": "2026-03-23T07:40:18.921Z"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
