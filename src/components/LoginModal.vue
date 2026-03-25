@@ -2,9 +2,9 @@
   <div v-if="show" class="modal-overlay" @click.self="close">
     <div class="modal-shell">
       <div class="brand">
-        <div class="logo">FI</div>
+        <div class="logo">GDU</div>
         <div class="brand-text">
-          <p class="title">Ferry Islands</p>
+          <p class="title">GDU Islands</p>
           <p class="subtitle">Đăng nhập để tiếp tục</p>
         </div>
       </div>

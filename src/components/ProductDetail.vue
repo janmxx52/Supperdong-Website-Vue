@@ -129,8 +129,8 @@
         >
           <input type="radio" :value="c.code" v-model="selectedClass" />
           <div class="title">{{ c.name }}</div>
-          <div class="price">NL: {{ c.priceAdult.toLocaleString() }} đ</div>
-          <div class="price small">TE: {{ c.priceChild.toLocaleString() }} đ</div>
+          <div class="price">Người lớn: {{ c.priceAdult.toLocaleString() }} đ</div>
+          <div class="price small">Trẻ em: {{ c.priceChild.toLocaleString() }} đ</div>
         </label>
       </div>
       <h4>Ghế ngồi (tùy chọn)</h4>

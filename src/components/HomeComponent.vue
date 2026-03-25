@@ -69,9 +69,10 @@ const onSearch = async () => {
 onMounted(async () => {
   await store.init()
   routesData.value = store.routes
-  routesOptions.value = store.routes.map(r => ({ id: r.id, label: store.routeLabel(r.id) }))
+  routesOptions.value = store.routes.map(r => ({ 
+    id: r.id, 
+    label: store.routeLabel(r.id) }))
   if (routesOptions.value.length) form.routeId = routesOptions.value[0].id
-  // gợi ý: hôm nay hoặc ngày có sẵn trong db.json (2026-03-21)
   const today = new Date().toISOString().slice(0, 10)
   form.date = today
   await onSearch()

@@ -48,8 +48,9 @@ export const useSailingStore = defineStore('sailing', {
       const params = {}
       if (this.filters.routeId) params.routeId = Number(this.filters.routeId)
       if (this.filters.date) params.date = this.filters.date
+    
       const res = await axios.get(`${APIURL}/sailings`, { params })
-      // đảm bảo khớp khi routeId trong db là string/number
+      //
       const targetRoute = this.filters.routeId ? String(this.filters.routeId) : null
       let list = res.data.filter((s) =>
         targetRoute ? String(s.routeId) === targetRoute : true
@@ -67,7 +68,6 @@ export const useSailingStore = defineStore('sailing', {
       return this.currentSailing
     },
     async init() {
-      // nạp routes + ports song song
       await Promise.all([this.fetchRoutes(), this.fetchPorts()])
     },
     routeLabel(routeId) {
