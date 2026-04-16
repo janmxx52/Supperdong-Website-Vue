@@ -4,9 +4,9 @@
       <div class="brand">
         <div class="logo">GDU</div>
         <div class="brand-text">
-          <p class="title">GDU Islands</p>
-          <p class="subtitle">Đăng nhập để tiếp tục</p>
-        </div>
+            <p class="title">GDU Islands</p>
+            <p class="subtitle">Đăng nhập để tiếp tục</p>
+          </div>
       </div>
       <div class="modal-content">
         <button class="close-btn" @click="close">&times;</button>
@@ -14,6 +14,8 @@
           <h2>Chào mừng trở lại</h2>
           <p>Quản lý đặt vé của bạn nhanh chóng.</p>
         </div>
+
+        <p v-if="authError" class="form-error">{{ authError }}</p>
 
         <form class="login-form" @submit.prevent="submit">
           <div class="form-group">
@@ -32,7 +34,6 @@
             <div class="input-wrapper">
               <input
                 v-model="form.password"
-                id="password"
                 placeholder="Nhập mật khẩu"
                 required
                 type="password"
@@ -48,9 +49,7 @@
             <a href="#" class="forgot-password">Quên mật khẩu?</a>
           </div>
 
-          <button type="submit" class="btn-submit">
-            Đăng nhập
-          </button>
+          <button type="submit" class="btn-submit">Đăng nhập</button>
         </form>
       </div>
     </div>
@@ -58,18 +57,36 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits, reactive } from 'vue'
+import { computed, defineEmits, defineProps, reactive } from 'vue'
+import { useAuthStore } from '@/stores/auth'
 
 defineProps({ show: { type: Boolean, default: false } })
 const emit = defineEmits(['close'])
+const authStore = useAuthStore()
+
 const form = reactive({
   account: '',
   password: '',
 })
 
-const close = () => emit('close')
+const authError = computed(() => authStore.error)
+
+const close = () => {
+  authStore.clearError()
+  emit('close')
+}
+
 const submit = () => {
-  alert('Đăng nhập demo thành công')
+  const user = authStore.login({
+    account: form.account,
+    password: form.password,
+  })
+
+  if (!user) return
+
+  window.alert(`Đăng nhập thành công: ${user.fullname}`)
+  form.account = ''
+  form.password = ''
   emit('close')
 }
 </script>
@@ -78,7 +95,7 @@ const submit = () => {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: linear-gradient(135deg, rgba(12,43,68,0.85), rgba(16,69,111,0.8));
+  background: linear-gradient(135deg, rgba(12, 43, 68, 0.85), rgba(16, 69, 111, 0.8));
   backdrop-filter: blur(6px);
   display: grid;
   place-items: center;
@@ -90,11 +107,11 @@ const submit = () => {
   grid-template-columns: 200px 1fr;
   max-width: 840px;
   width: 100%;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 }
 .brand {
   background: linear-gradient(180deg, #ffd166 0%, #f59e0b 100%);
@@ -114,7 +131,7 @@ const submit = () => {
   place-items: center;
   font-weight: 900;
   font-size: 18px;
-  box-shadow: 0 10px 24px rgba(12,43,68,0.35);
+  box-shadow: 0 10px 24px rgba(12, 43, 68, 0.35);
 }
 .brand-text .title {
   margin: 0;
@@ -149,6 +166,15 @@ const submit = () => {
 .modal-header h2 {
   margin: 0;
   color: #0c2b44;
+}
+.form-error {
+  margin: -6px 0 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  font-weight: 600;
 }
 .login-form {
   display: flex;
@@ -192,7 +218,7 @@ const submit = () => {
   cursor: pointer;
 }
 .btn-submit:hover {
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 @media (max-width: 900px) {
   .modal-shell {

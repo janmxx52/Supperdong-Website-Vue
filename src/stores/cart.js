@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia'
-import axios from 'axios'
-import { APIURL } from '@/constraint'
+import { api, getApiErrorMessage } from '@/constraint'
 
 const STORAGE_KEY = 'ferry-cart'
 
@@ -48,18 +47,44 @@ export const useCartStore = defineStore('cart', {
       this.cartItems = []
       saveToStorage(this.cartItems)
     },
-    async checkout(contact = { name: 'Guest', phone: '', email: '' }) {
+    async checkout(options = {}) {
       if (!this.cartItems.length) return null
+
+      const isLegacyContactPayload =
+        options &&
+        typeof options === 'object' &&
+        ('name' in options || 'phone' in options || 'email' in options)
+      const normalized = isLegacyContactPayload ? { contact: options } : options
+
+      const contact = normalized.contact || { name: 'Guest', phone: '', email: '' }
+      const payment = normalized.payment || {}
+      const accountId = normalized.accountId || null
+
       const payload = {
+        accountId,
         contact,
         items: this.cartItems,
+        payment: {
+          method: payment.method || 'qr-viet',
+          provider: payment.provider || 'QRViet',
+          status: payment.status || 'pending',
+          reference: payment.reference || null,
+        },
+        status: 'confirmed',
         total: this.cartItems.reduce((sum, i) => sum + i.total, 0),
         createdAt: new Date().toISOString(),
       }
-      const res = await axios.post(`${APIURL}/bookings`, payload)
-      const bookingId = res.data.id
-      this.clear()
-      return bookingId
+
+      try {
+        const res = await api.post('/bookings', payload)
+        const bookingId = res.data.id
+        this.error = null
+        this.clear()
+        return bookingId
+      } catch (err) {
+        this.error = getApiErrorMessage(err)
+        return null
+      }
     },
   },
   getters: {

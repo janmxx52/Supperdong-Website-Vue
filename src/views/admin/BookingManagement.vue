@@ -16,9 +16,9 @@
           <td>{{ b.contact?.name }}</td>
           <td>{{ b.contact?.email }}</td>
           <td>{{ b.contact?.phone }}</td>
-          <td>{{ formatMoney(b.total) }}</td>
-          <td>{{ formatDate(b.createdAt) }}</td>
-          <td>
+            <td>{{ formatMoney(b.total) }}</td>
+            <td>{{ formatDate(b.createdAt) }}</td>
+            <td>
             <button class="ghost" @click="selectBooking(b)">Xem</button>
             <button class="danger" @click="removeBooking(b.id)">Xóa</button>
           </td>
@@ -29,14 +29,14 @@
     <div v-if="selected" class="drawer">
       <div class="drawer-head">
         <h3>Đơn {{ selected.id }}</h3>
-        <button class="ghost" @click="selected=null">Đóng</button>
+        <button class="ghost" @click="selected = null">Đóng</button>
       </div>
-      <p><strong>Khách:</strong> {{ selected.contact?.name }} | {{ selected.contact?.phone }}</p>
+      <p><strong>Khach:</strong> {{ selected.contact?.name }} | {{ selected.contact?.phone }}</p>
       <p><strong>Email:</strong> {{ selected.contact?.email }}</p>
-      <p><strong>Tổng:</strong> {{ formatMoney(selected.total) }}</p>
+      <p><strong>Tong:</strong> {{ formatMoney(selected.total) }}</p>
       <h4>Hạng mục</h4>
       <ul>
-        <li v-for="(it, idx) in selected.items" :key="idx">
+          <li v-for="(it, idx) in selected.items" :key="idx">
           {{ it.routeLabel }} | {{ it.date }} {{ it.departTime }} - {{ it.arriveTime }} |
           {{ it.className }} | NL {{ it.pax.adult }} / TE {{ it.pax.child }} | {{ formatMoney(it.total) }}
         </li>
@@ -47,27 +47,32 @@
 
 <script setup>
 import { onMounted, reactive, ref } from 'vue'
-import axios from 'axios'
-import { APIURL } from '@/constraint'
+import { api, getApiErrorMessage } from '@/constraint'
 
 const bookings = ref([])
 const selected = ref(null)
 const notice = reactive({ type: '', text: '' })
 
 const load = async () => {
-  const res = await axios.get(`${APIURL}/bookings`)
-  // sort desc by createdAt
-  bookings.value = res.data.sort((a,b)=> new Date(b.createdAt||0) - new Date(a.createdAt||0))
+  try {
+    const res = await api.get('/bookings')
+    bookings.value = res.data.sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0))
+  } catch (err) {
+    bookings.value = []
+    selected.value = null
+    setNotice('error', getApiErrorMessage(err))
+  }
 }
 
 const removeBooking = async (id) => {
   if (!confirm('Xóa đơn đặt vé này?')) return
   try {
-    await axios.delete(`${APIURL}/bookings/${id}`)
+    await api.delete(`/bookings/${id}`)
     setNotice('warning', 'Đã xóa đơn')
-    load()
+    if (selected.value?.id === id) selected.value = null
+    await load()
   } catch (err) {
-    setNotice('error', 'Xóa thất bại')
+    setNotice('error', getApiErrorMessage(err))
   }
 }
 
@@ -76,8 +81,8 @@ const selectBooking = (b) => {
 }
 
 const setNotice = (type, text) => Object.assign(notice, { type, text })
-const formatMoney = (n=0) => n.toLocaleString() + ' đ'
-const formatDate = (d) => d ? new Date(d).toLocaleString() : ''
+const formatMoney = (n = 0) => `${n.toLocaleString()} đ`
+const formatDate = (d) => (d ? new Date(d).toLocaleString() : '')
 
 onMounted(load)
 </script>

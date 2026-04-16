@@ -1,23 +1,32 @@
 # GDU Booking (Vue CLI)
 
-Demo web đặt vé tàu ra đảo (Rạch Giá/Phú Quốc, Hà Tiên, Sóc Trăng/Côn Đảo) dùng Vue 3 + Pinia + Vue Router + Axios (data tĩnh).
+Demo web dat ve tau ra dao voi Vue 3 + Pinia + Vue Router + Axios.
 
-## Chạy dự án
+## Chay local
 ```bash
 npm install
-# chạy API giả lập (cổng 3000)
 npm run mock:api
-# tab khác chạy frontend (cổng 8080)
 npm run serve
 ```
 
-## Kiến trúc nhanh
-- `src/data/ferryData.js`: dữ liệu mẫu (tuyến, cảng, chuyến, giá).
-- `src/stores/sailing.js`: quản lý tuyến/chuyến, gọi JSON Server.
-- `src/stores/cart.js`: giỏ đặt vé (localStorage) + checkout POST /bookings.
-- `src/components/HomeComponent.vue`: tìm chuyến + danh sách kết quả.
-- `src/components/ProductDetail.vue`: chi tiết chuyến, chọn hạng ghế & số khách.
-- `src/components/ProductList.vue`: thẻ chuyến (SailingCard).
-- `src/components/CardModal.vue`: modal giỏ vé (chưa gắn vào header).
+Frontend se tu dong goi `http://localhost:3000` khi chay tren `localhost`.
 
-Bạn có thể thay JSON Server bằng API thật bằng cách chỉnh `APIURL` trong `src/constraint.js`.
+## Cau hinh API
+
+Dat `VUE_APP_APIURL` neu muon frontend goi backend khac:
+
+```bash
+VUE_APP_APIURL=https://ferry-api-696633279800.asia-southeast1.run.app
+```
+
+- Local: co san file `.env.development` tro toi `http://localhost:3000`
+- Deploy frontend Docker: truyen `--build-arg VUE_APP_APIURL=https://ferry-api-696633279800.asia-southeast1.run.app`
+- Neu khong dat bien moi truong khi deploy, frontend se fallback sang `/api`
+
+## Kien truc nhanh
+- `src/constraint.js`: cau hinh Axios dung chung va xu ly loi API
+- `src/stores/sailing.js`: quan ly tuyen va chuyen tau
+- `src/stores/cart.js`: gio dat ve va checkout
+- `src/components/HomeComponent.vue`: tim chuyen va hien thi ket qua
+- `src/components/ProductDetail.vue`: dat ve cho mot chuyen cu the
+- `src/views/admin/*`: CRUD routes, sailings, bookings

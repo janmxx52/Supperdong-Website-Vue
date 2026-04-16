@@ -7,6 +7,9 @@
         <p>Tạo tài khoản mới để tiếp tục.</p>
       </div>
 
+      <p v-if="formError" class="form-error">{{ formError }}</p>
+      <p v-else-if="authError" class="form-error">{{ authError }}</p>
+
       <form class="register-form" @submit.prevent="submit">
         <div class="form-group">
           <label>Họ và tên *</label>
@@ -41,10 +44,13 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits, reactive } from 'vue'
+import { computed, defineEmits, defineProps, reactive, ref } from 'vue'
+import { useAuthStore } from '@/stores/auth'
 
 defineProps({ show: { type: Boolean, default: false } })
 const emit = defineEmits(['close'])
+const authStore = useAuthStore()
+
 const form = reactive({
   fullname: '',
   email: '',
@@ -53,14 +59,46 @@ const form = reactive({
   confirm: '',
   accept: false,
 })
+const formError = ref('')
 
-const close = () => emit('close')
+const authError = computed(() => authStore.error)
+
+const resetForm = () => {
+  form.fullname = ''
+  form.email = ''
+  form.phone = ''
+  form.password = ''
+  form.confirm = ''
+  form.accept = false
+  formError.value = ''
+}
+
+const close = () => {
+  authStore.clearError()
+  formError.value = ''
+  emit('close')
+}
+
 const submit = () => {
+  formError.value = ''
+  authStore.clearError()
+
   if (form.password !== form.confirm) {
-    alert('Mật khẩu không khớp')
+    formError.value = 'Mật khẩu xác nhận không khớp.'
     return
   }
-  alert('Đăng ký demo thành công')
+
+  const user = authStore.register({
+    fullname: form.fullname,
+    email: form.email,
+    phone: form.phone,
+    password: form.password,
+  })
+
+  if (!user) return
+
+  window.alert('Đăng ký thành công và đã đăng nhập.')
+  resetForm()
   emit('close')
 }
 </script>
@@ -102,6 +140,15 @@ const submit = () => {
 .modal-header h2 {
   margin: 0;
   color: #0c2b44;
+}
+.form-error {
+  margin: -6px 0 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  font-weight: 600;
 }
 .register-form {
   display: flex;

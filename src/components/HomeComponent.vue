@@ -2,7 +2,7 @@
   <section class="hero-search">
     <div class="hero-text">
       <div class="pill">GDU Islands</div>
-      <h1>Đặt vé tàu ra đảo<br/>nhanh – rõ – gọn</h1>
+      <h1>Đặt vé tàu ra đảo<br/>nhanh - rõ - gọn</h1>
       <p class="sub">Chọn tuyến, chọn ngày, xem giá tức thì.</p>
       <div class="stats">
         <div><strong>10+</strong><span>Tuyến nội địa</span></div>
@@ -29,8 +29,9 @@
   <section class="results">
     <div class="results-head">
       <h2>Chuyến phù hợp</h2>
-      <div class="hint" v-if="!sailings.length">Hãy chọn tuyến và ngày để xem chuyến</div>
+      <div v-if="!sailings.length" class="hint">Hãy chọn tuyến và ngày để xem chuyến</div>
     </div>
+    <div v-if="loadError" class="api-error">{{ loadError }}</div>
     <div class="sailing-list">
       <SailingCard
         v-for="s in sailings"
@@ -44,7 +45,7 @@
 </template>
 
 <script setup>
-import { reactive, ref, onMounted } from 'vue'
+import { computed, onMounted, reactive, ref } from 'vue'
 import SailingCard from './ProductList.vue'
 import { useSailingStore } from '@/stores/sailing'
 
@@ -53,6 +54,7 @@ const sailings = ref([])
 const routesOptions = ref([])
 const routesData = ref([])
 const today = new Date().toISOString().slice(0, 10)
+const loadError = computed(() => store.error)
 
 const form = reactive({
   routeId: '',
@@ -60,6 +62,11 @@ const form = reactive({
 })
 
 const onSearch = async () => {
+  if (!form.routeId || !form.date) {
+    sailings.value = []
+    return
+  }
+
   sailings.value = await store.fetchSailings({
     routeId: form.routeId,
     date: form.date,
@@ -69,11 +76,14 @@ const onSearch = async () => {
 onMounted(async () => {
   await store.init()
   routesData.value = store.routes
-  routesOptions.value = store.routes.map(r => ({ 
-    id: r.id, 
-    label: store.routeLabel(r.id) }))
-  if (routesOptions.value.length) form.routeId = routesOptions.value[0].id
-  const today = new Date().toISOString().slice(0, 10)
+  routesOptions.value = store.routes.map((r) => ({
+    id: r.id,
+    label: store.routeLabel(r.id),
+  }))
+
+  if (!routesOptions.value.length) return
+
+  form.routeId = routesOptions.value[0].id
   form.date = today
   await onSearch()
 })
@@ -172,6 +182,14 @@ onMounted(async () => {
 .hint {
   color: #888;
   font-style: italic;
+}
+.api-error {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fff1f2;
+  color: #b91c1c;
+  border: 1px solid #fecdd3;
 }
 .sailing-list {
   display: grid;

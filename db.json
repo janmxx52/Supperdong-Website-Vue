@@ -568,14 +568,103 @@
         }
       ],
       "id": "8390"
+    },
+    {
+      "id": "3f81",
+      "routeId": 101,
+      "date": "2026-03-27",
+      "departTime": "21:30",
+      "arriveTime": "22:31",
+      "vessel": "GDU",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 200000,
+          "priceChild": 150000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 300000,
+          "priceChild": 200000
+        }
+      ]
+    },
+    {
+      "id": "7607",
+      "routeId": 101,
+      "date": "2026-04-22",
+      "departTime": "22:10",
+      "arriveTime": "12:10",
+      "vessel": "GDU",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 100000,
+          "priceChild": 200000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 300000,
+          "priceChild": 4500000
+        }
+      ]
+    },
+    {
+      "id": "c46b",
+      "routeId": 101,
+      "date": "2026-04-16",
+      "departTime": "22:05",
+      "arriveTime": "12:05",
+      "vessel": "GDU11",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Pho thong",
+          "priceAdult": 300000,
+          "priceChild": 200000
+        },
+        {
+          "code": "BUS",
+          "name": "Thuong gia",
+          "priceAdult": 350000,
+          "priceChild": 300000
+        }
+      ]
+    },
+    {
+      "id": "98f8",
+      "routeId": 101,
+      "date": "2026-04-14",
+      "departTime": "20:55",
+      "arriveTime": "21:55",
+      "vessel": "Gdu22",
+      "classOptions": [
+        {
+          "code": "ECO",
+          "name": "Phổ thông",
+          "priceAdult": 300000,
+          "priceChild": 200000
+        },
+        {
+          "code": "BUS",
+          "name": "Thương gia",
+          "priceAdult": 500000,
+          "priceChild": 400000
+        }
+      ]
     }
   ],
   "bookings": [
     {
-      "id": "dcc7",
+      "id": "f28e",
+      "accountId": "1776177564244",
       "contact": {
-        "name": "Hau",
-        "phone": "123123123",
+        "name": "HauDz",
+        "phone": "0896673828",
         "email": "nguyenquochau080@gmail.com",
         "invoice": {
           "buyer": "",
@@ -586,117 +675,17 @@
       },
       "items": [
         {
-          "sailingId": "1004",
-          "routeLabel": "Soc Trang → Con Dao",
-          "date": "2026-03-23",
-          "departTime": "08:15",
-          "arriveTime": "11:00",
-          "vessel": "Trung Trac",
+          "sailingId": "c46b",
+          "routeLabel": "Rach Gia -> Phu Quoc",
+          "date": "2026-04-16",
+          "departTime": "22:05",
+          "arriveTime": "12:05",
+          "vessel": "GDU11",
           "classCode": "BUS",
           "className": "Thuong gia",
           "price": {
-            "adult": 780000,
-            "child": 600000
-          },
-          "pax": {
-            "adult": 1,
-            "child": 1
-          },
-          "passengers": [
-            {
-              "name": "Hau",
-              "type": "adult",
-              "seat": ""
-            },
-            {
-              "name": "Ngoc",
-              "type": "child",
-              "seat": ""
-            }
-          ],
-          "total": 1380000,
-          "key": "1004-BUS"
-        }
-      ],
-      "total": 1380000,
-      "createdAt": "2026-03-23T06:16:41.510Z"
-    },
-    {
-      "id": "2726",
-      "contact": {
-        "name": "Ngoc",
-        "phone": "123123123",
-        "email": "huynhnhattuong4405@gmail.com",
-        "invoice": {
-          "buyer": "",
-          "company": "",
-          "tax": "",
-          "address": ""
-        }
-      },
-      "items": [
-        {
-          "sailingId": "6798",
-          "routeLabel": "Soc Trang → Con Dao",
-          "date": "2026-03-23",
-          "departTime": "08:45",
-          "arriveTime": "08:38",
-          "vessel": "GDU",
-          "classCode": "BUS",
-          "className": "Thuong gia",
-          "price": {
-            "adult": 300000,
-            "child": 200000
-          },
-          "pax": {
-            "adult": 1,
-            "child": 1
-          },
-          "passengers": [
-            {
-              "name": "Ngoc",
-              "type": "adult",
-              "seat": ""
-            },
-            {
-              "name": "hu",
-              "type": "child",
-              "seat": ""
-            }
-          ],
-          "total": 500000,
-          "key": "6798-BUS"
-        }
-      ],
-      "total": 500000,
-      "createdAt": "2026-03-23T06:39:51.911Z"
-    },
-    {
-      "id": "9357",
-      "contact": {
-        "name": "Phuc",
-        "phone": "123123123",
-        "email": "nguyenquochau080@gmail.com",
-        "invoice": {
-          "buyer": "",
-          "company": "",
-          "tax": "",
-          "address": ""
-        }
-      },
-      "items": [
-        {
-          "sailingId": "1005",
-          "routeLabel": "Soc Trang → Con Dao",
-          "date": "2026-03-24",
-          "departTime": "13:00",
-          "arriveTime": "19:45",
-          "vessel": "Trung Nhi",
-          "classCode": "BUS",
-          "className": "Thuong gia",
-          "price": {
-            "adult": 780000,
-            "child": 600000
+            "adult": 350000,
+            "child": 300000
           },
           "pax": {
             "adult": 1,
@@ -704,23 +693,39 @@
           },
           "passengers": [
             {
-              "name": "Phuc",
+              "name": "HauDz",
               "type": "adult",
-              "seat": ""
+              "seat": "10V"
             }
           ],
-          "total": 780000,
-          "key": "1005-BUS"
+          "total": 350000,
+          "key": "c46b-BUS"
         }
       ],
-      "total": 780000,
-      "createdAt": "2026-03-23T06:50:12.354Z"
+      "payment": {
+        "method": "qr-viet",
+        "provider": "QRViet",
+        "status": "paid",
+        "reference": null
+      },
+      "status": "cancelled",
+      "total": 350000,
+      "createdAt": "2026-04-14T14:50:20.908Z",
+      "paidAt": "2026-04-14T14:50:23.100Z",
+      "cancelledAt": "2026-04-14T14:50:38.899Z",
+      "cancellation": {
+        "feeRate": 0.5,
+        "refundRate": 0.5,
+        "feeAmount": 175000,
+        "refundAmount": 175000
+      }
     },
     {
-      "id": "55e9",
+      "id": "8423",
+      "accountId": "1776177564244",
       "contact": {
-        "name": "hau",
-        "phone": "123123123",
+        "name": "HauDz",
+        "phone": "0896673828",
         "email": "nguyenquochau080@gmail.com",
         "invoice": {
           "buyer": "",
@@ -731,51 +736,110 @@
       },
       "items": [
         {
-          "sailingId": "1005",
-          "routeLabel": "Soc Trang → Con Dao",
-          "date": "2026-03-24",
-          "departTime": "13:00",
-          "arriveTime": "19:45",
-          "vessel": "Trung Nhi",
+          "sailingId": "c46b",
+          "routeLabel": "Rach Gia -> Phu Quoc",
+          "date": "2026-04-16",
+          "departTime": "22:05",
+          "arriveTime": "12:05",
+          "vessel": "GDU11",
           "classCode": "BUS",
           "className": "Thuong gia",
           "price": {
-            "adult": 780000,
-            "child": 600000
+            "adult": 350000,
+            "child": 300000
           },
           "pax": {
             "adult": 1,
-            "child": 2
+            "child": 0
           },
           "passengers": [
             {
-              "name": "hau",
+              "name": "HauDz",
               "type": "adult",
-              "seat": ""
-            },
-            {
-              "name": "H",
-              "type": "child",
-              "seat": ""
-            },
-            {
-              "name": "A",
-              "type": "child",
-              "seat": ""
+              "seat": "1V"
             }
           ],
-          "total": 1980000,
-          "key": "1005-BUS"
+          "total": 350000,
+          "key": "c46b-BUS"
         }
       ],
-      "total": 1980000,
-      "createdAt": "2026-03-23T07:28:17.680Z"
+      "payment": {
+        "method": "qr-viet",
+        "provider": "QRViet",
+        "status": "paid",
+        "reference": null
+      },
+      "status": "cancelled",
+      "total": 350000,
+      "createdAt": "2026-04-14T14:51:07.651Z",
+      "paidAt": "2026-04-14T14:51:09.930Z",
+      "cancelledAt": "2026-04-14T14:51:30.755Z",
+      "cancellation": {
+        "feeRate": 0.5,
+        "refundRate": 0.5,
+        "feeAmount": 175000,
+        "refundAmount": 175000
+      }
     },
     {
-      "id": "a898",
+      "id": "da68",
+      "accountId": null,
       "contact": {
-        "name": "A",
-        "phone": "123123123",
+        "name": "Hau",
+        "phone": "1231231231",
+        "email": "nguyenquochau123123@gmail.com",
+        "invoice": {
+          "buyer": "",
+          "company": "",
+          "tax": "",
+          "address": ""
+        }
+      },
+      "items": [
+        {
+          "sailingId": "c46b",
+          "routeLabel": "Rach Gia -> Phu Quoc",
+          "date": "2026-04-16",
+          "departTime": "22:05",
+          "arriveTime": "12:05",
+          "vessel": "GDU11",
+          "classCode": "BUS",
+          "className": "Thuong gia",
+          "price": {
+            "adult": 350000,
+            "child": 300000
+          },
+          "pax": {
+            "adult": 1,
+            "child": 0
+          },
+          "passengers": [
+            {
+              "name": "Hau",
+              "type": "adult",
+              "seat": "1V"
+            }
+          ],
+          "total": 350000,
+          "key": "c46b-BUS"
+        }
+      ],
+      "payment": {
+        "method": "qr-viet",
+        "provider": "QRViet",
+        "status": "pending",
+        "reference": null
+      },
+      "status": "confirmed",
+      "total": 350000,
+      "createdAt": "2026-04-14T14:58:39.877Z"
+    },
+    {
+      "id": "6918",
+      "accountId": "1776177564244",
+      "contact": {
+        "name": "HauDz",
+        "phone": "0896673828",
         "email": "nguyenquochau080@gmail.com",
         "invoice": {
           "buyer": "",
@@ -786,40 +850,43 @@
       },
       "items": [
         {
-          "sailingId": "1013",
-          "routeLabel": "Soc Trang → Phu Quoc",
-          "date": "2026-03-25",
-          "departTime": "09:00",
-          "arriveTime": "11:20",
-          "vessel": "PQ Speed",
-          "classCode": "ECO",
-          "className": "Pho thong",
+          "sailingId": "c46b",
+          "routeLabel": "Rach Gia -> Phu Quoc",
+          "date": "2026-04-16",
+          "departTime": "22:05",
+          "arriveTime": "12:05",
+          "vessel": "GDU11",
+          "classCode": "BUS",
+          "className": "Thuong gia",
           "price": {
-            "adult": 360000,
-            "child": 260000
+            "adult": 350000,
+            "child": 300000
           },
           "pax": {
             "adult": 1,
-            "child": 1
+            "child": 0
           },
           "passengers": [
             {
-              "name": "A",
+              "name": "HauDz",
               "type": "adult",
-              "seat": ""
-            },
-            {
-              "name": "B",
-              "type": "child",
-              "seat": ""
+              "seat": "1V"
             }
           ],
-          "total": 620000,
-          "key": "1013-ECO"
+          "total": 350000,
+          "key": "c46b-BUS"
         }
       ],
-      "total": 620000,
-      "createdAt": "2026-03-25T01:32:35.744Z"
+      "payment": {
+        "method": "qr-viet",
+        "provider": "QRViet",
+        "status": "paid",
+        "reference": null
+      },
+      "status": "paid",
+      "total": 350000,
+      "createdAt": "2026-04-14T14:58:45.333Z",
+      "paidAt": "2026-04-14T14:58:56.149Z"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

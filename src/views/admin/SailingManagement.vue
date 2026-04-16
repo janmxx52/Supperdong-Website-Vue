@@ -53,7 +53,7 @@
             <td>{{ s.id }}</td>
             <td>{{ routeLabelById(s.routeId) }}</td>
             <td>{{ s.date }}</td>
-            <td>{{ s.departTime }} → {{ s.arriveTime }}</td>
+            <td>{{ s.departTime }} -> {{ s.arriveTime }}</td>
             <td>{{ s.vessel }}</td>
             <td>{{ minPrice(s).toLocaleString() }} đ</td>
             <td class="actions">
@@ -69,8 +69,7 @@
 
 <script setup>
 import { onMounted, reactive, ref } from 'vue'
-import axios from 'axios'
-import { APIURL } from '@/constraint'
+import { api, getApiErrorMessage } from '@/constraint'
 
 const routes = ref([])
 const sailings = ref([])
@@ -90,12 +89,18 @@ const form = reactive({
 })
 
 const load = async () => {
-  const [r, s] = await Promise.all([
-    axios.get(`${APIURL}/routes`),
-    axios.get(`${APIURL}/sailings`),
-  ])
-  routes.value = r.data
-  sailings.value = s.data
+  try {
+    const [r, s] = await Promise.all([
+      api.get('/routes'),
+      api.get('/sailings'),
+    ])
+    routes.value = r.data
+    sailings.value = s.data
+  } catch (err) {
+    routes.value = []
+    sailings.value = []
+    setNotice('error', getApiErrorMessage(err))
+  }
 }
 
 const saveSailing = async () => {
@@ -110,22 +115,22 @@ const saveSailing = async () => {
     arriveTime: form.arriveTime,
     vessel: form.vessel,
     classOptions: [
-      { code: 'ECO', name: 'Pho thong', priceAdult: form.ecoAdult, priceChild: form.ecoChild },
-      { code: 'BUS', name: 'Thuong gia', priceAdult: form.busAdult, priceChild: form.busChild },
+      { code: 'ECO', name: 'Phổ thông', priceAdult: form.ecoAdult, priceChild: form.ecoChild },
+      { code: 'BUS', name: 'Thương gia', priceAdult: form.busAdult, priceChild: form.busChild },
     ],
   }
   try {
     if (form.id) {
-      await axios.put(`${APIURL}/sailings/${form.id}`, { ...payload, id: form.id })
+      await api.put(`/sailings/${form.id}`, { ...payload, id: form.id })
       setNotice('success', 'Cập nhật chuyến thành công')
     } else {
-      await axios.post(`${APIURL}/sailings`, payload)
+      await api.post('/sailings', payload)
       setNotice('success', 'Thêm chuyến thành công')
     }
     await load()
     resetForm()
   } catch (err) {
-    setNotice('error', 'Lưu chuyến thất bại')
+    setNotice('error', getApiErrorMessage(err))
   }
 }
 
@@ -145,14 +150,17 @@ const editSailing = (s) => {
 }
 
 const removeSailing = async (id) => {
-  if (!id) { setNotice('error', 'Chuyến không có ID hợp lệ'); return }
+  if (!id) {
+    setNotice('error', 'Chuyến không có ID hợp lệ')
+    return
+  }
   if (!confirm('Xóa chuyến này?')) return
   try {
-    await axios.delete(`${APIURL}/sailings/${id}`)
+    await api.delete(`/sailings/${id}`)
     setNotice('warning', 'Đã xóa chuyến')
-    load()
+    await load()
   } catch (err) {
-    setNotice('error', 'Xóa thất bại')
+    setNotice('error', getApiErrorMessage(err))
   }
 }
 
@@ -161,7 +169,7 @@ const resetForm = () => Object.assign(form, {
   ecoAdult: 0, ecoChild: 0, busAdult: 0, busChild: 0,
 })
 
-const routeLabel = (r) => `${r.fromPort} → ${r.toPort}`
+const routeLabel = (r) => `${r.fromPort} -> ${r.toPort}`
 const routeLabelById = (id) => {
   const r = routes.value.find((x) => `${x.id}` === `${id}`)
   return r ? routeLabel(r) : id

@@ -1,10 +1,12 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "@/components/HomeComponent.vue";
 import BookingDetail from "@/components/ProductDetail.vue";
+import ProfileView from "@/views/ProfileView.vue";
 import AdminLayout from "@/views/admin/AdminLayout.vue";
 import RouteManagement from "@/views/admin/RouteManagement.vue";
 import BookingManagement from "@/views/admin/BookingManagement.vue";
 import SailingManagement from "@/views/admin/SailingManagement.vue";
+import PaymentView from "@/views/PaymentView.vue";
 
 const routes = [
   {
@@ -16,6 +18,16 @@ const routes = [
     path: "/booking/:id",
     name: "BookingDetail",
     component: BookingDetail,
+  },
+  {
+    path: "/payment/:id",
+    name: "Payment",
+    component: PaymentView,
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: ProfileView,
   },
   {
     path: "/admin",

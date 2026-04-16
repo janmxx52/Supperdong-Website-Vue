@@ -48,33 +48,37 @@
 
 <script setup>
 import { onMounted, reactive, ref } from 'vue'
-import axios from 'axios'
-import { APIURL } from '@/constraint'
+import { api, getApiErrorMessage } from '@/constraint'
 
 const routes = ref([])
 const form = reactive({ id: null, fromPort: '', toPort: '', durationMinutes: 0, startDate: '' })
 const notice = reactive({ type: '', text: '' })
 
 const load = async () => {
-  const res = await axios.get(`${APIURL}/routes`)
-  routes.value = res.data
+  try {
+    const res = await api.get('/routes')
+    routes.value = res.data
+  } catch (err) {
+    routes.value = []
+    setNotice('error', getApiErrorMessage(err))
+  }
 }
 
 const saveRoute = async () => {
   try {
     if (form.id) {
-      await axios.put(`${APIURL}/routes/${form.id}`, { ...form })
+      await api.put(`/routes/${form.id}`, { ...form })
       setNotice('success', 'Cập nhật thành công')
     } else {
       const payload = { ...form }
-      delete payload.id // để json-server tự tạo id
-      await axios.post(`${APIURL}/routes`, payload)
+      delete payload.id
+      await api.post('/routes', payload)
       setNotice('success', 'Thêm tuyến thành công')
     }
     await load()
     resetForm()
   } catch (err) {
-    setNotice('error', 'Không lưu được tuyến')
+    setNotice('error', getApiErrorMessage(err))
   }
 }
 
@@ -86,17 +90,17 @@ const removeRoute = async (id) => {
   }
   if (!confirm('Xóa tuyến này?')) return
   try {
-    await axios.delete(`${APIURL}/routes/${id}`)
+    await api.delete(`/routes/${id}`)
     setNotice('warning', 'Đã xóa tuyến')
-    load()
+    await load()
   } catch (err) {
-    setNotice('error', 'Xóa thất bại')
+    setNotice('error', getApiErrorMessage(err))
   }
 }
 
 const resetForm = () => Object.assign(form, { id: null, fromPort: '', toPort: '', durationMinutes: 0, startDate: '' })
 const setNotice = (type, text) => Object.assign(notice, { type, text })
-const formatDate = (d) => d ? new Date(d).toLocaleDateString() : '-'
+const formatDate = (d) => (d ? new Date(d).toLocaleDateString() : '-')
 
 onMounted(load)
 </script>
